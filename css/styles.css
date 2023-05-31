@@ -1,0 +1,520 @@
+body{
+    margin: 0;
+    font-family: 'Heebo', sans-serif;
+    padding-top: 80px;  /*por conta do header fixo, foi necessario adicionar padding ao body
+                         já que como algum elemento inicia no começo da pagina e o header ta fixo la,
+                         esse elemento ficaria atras do header. Entao com padding-top no body
+                         qqr elemento so começa a partir desses 80px, oq corresponde ao final do header
+                         , nao sendo escondido atras dele e começando logo depois ja que a altura do header
+                         é de 80 px*/
+}
+
+
+.container{            /* alinhamento com o logo*/
+    max-width: 1180px;
+   margin: auto;
+   padding: 0 16px;
+}
+
+
+ ul{
+    margin:0;
+    padding: 0;
+}
+
+
+
+header{
+    background: #FFFFFF;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.15);
+    height: 80px;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    z-index: 1; /* serve para sobrepor um outro elemento com zindex menor, como quero que
+                   o header ao scrollar fique por cima do hero e de
+                   qqr conteudo da pagina, defini o z-index dele para 1
+                    e o do hero para 0. dai o header ira sobrepor o hero e nao ira sumir por baixo
+                    dele durante a scrollagem. Isso eh importante pois quando ha mtos elementos
+                     posicionados como fixed/ absolute, um indesejado pode sobrepor outro
+                      q nao era para ter sobreposto,funciona como definiçao de prioridade do que
+                      o desenvolvedor quer q sobreponha sobre outro*/
+}
+
+
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+
+header .logo{
+   
+    display: inline-block;
+    font-size: 27px;
+    
+}
+
+
+header nav{
+    
+    display: inline-block;
+    
+}
+
+
+
+
+header ul li {
+    display: inline-block;
+  
+}
+
+
+/* especificamente para os links!*/
+header nav ul li a{
+    font-family: Heebo;
+    font-size: 15px;
+    letter-spacing: 0.37px;
+    color: #3E3E3E;
+    margin-right: 24px;
+    text-decoration: none;
+}
+
+      /* mudar cor do link ao passar o mouse por cima*/
+header nav ul li a:hover{
+    color: #3E50E5;
+    cursor: pointer;
+
+
+
+}
+
+
+header nav ul li:last-of-type a{
+    margin: 0;
+}
+
+
+header .logo .blue-dot{
+    height: 10px;
+    width: 10px;
+ background: #3E50E5;
+ display: inline-block;
+ vertical-align: middle;
+ border-radius: 5px;
+ 
+
+}
+
+section.hero{
+    position: relative;   /*  qqr elemento filho do <section hero> vai se posicionar em relação a ele
+                            e nao mais à tela do browser, usar isso para sobrepor um texto no hero
+                             por exemplo,senao o texto ficaria em relação a tela do browser, como
+                              foi com o header.*/
+                      
+}
+
+
+section.hero img{
+
+    width: 100%;
+    height: auto;
+}
+
+.hero-content{
+    position:absolute; /* fixa em relação ao hero */
+    top: 0;
+    left:0;
+    width: 100%;       /* para ficar ocupando a posiçao da imagem hero toda */
+    height: 100%;
+    z-index: 0  
+}
+
+
+.hero-content .container{
+    display: flex;
+    flex-direction: column; /* para ficar um embaixo do outro  ja q no flexbox naturalmente ficam
+                                  alinhados um lado a lado*/
+    justify-content: center;
+    height: 100%; /* para ocupar a altura do container e do hero toda */
+}
+
+.hero-content h1{
+    max-width: 495px;
+color: #FFFFFF;
+font-size: 50px;
+line-height: 56px;
+letter-spacing: 1.25px;
+margin-bottom: 16px;
+margin-top: 0;
+font-weight: normal;
+}
+
+.hero-content p{
+color: #FFFFFF;
+max-width: 505px;
+font-weight: 300;
+font-size: 20px;
+line-height: 28px;
+font-weight: 300;
+margin-bottom: 21px;
+margin-top: 0;
+}
+
+.hero-content button{
+height: 50px;
+width: 200px;
+background-color: #3E50E5;
+border-radius: 25px;
+font-family: Heebo;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+color: #FFFFFF;
+border: none;
+
+}
+
+.hero-content button:hover{
+    background-color: white;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #3E50E5;
+    cursor: pointer;
+    border: 1px solid #3E50E5;
+}
+
+
+
+
+section.best-sellers hr{
+      border: none;
+      border-top: solid #67F11D;;
+      width: 66px;
+      
+}
+
+section.best-sellers h2{
+    text-align: center;
+    font-weight: normal;
+    font-size: 34px;
+    line-height: 42px;
+    color: #000000;
+    margin: 0 0 14px;
+    padding-top: 80px;
+}
+
+
+section.best-sellers .product-slider {
+    margin-top: 76px;
+    
+    
+    }
+
+section.best-sellers .product-slider .container{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 8px;
+}
+
+section.best-sellers .product-slider .product{
+    border-radius: 8px;
+    border: 1px solid #DDD;
+    width: 33%;
+    text-align: center;
+    margin: 0 8px;  /* 0 em cima e em baixo e 8 de cada lado  q no caso fica 16px pois cada produto
+                      tera 8px em um lado e somado com o 8px do produto ao lado fica 16 de margem,
+                       como deve ser no prototipo*/
+   padding: 40px;    
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;      /* alinhar botao */           
+}
+
+section.best-sellers .product-slider .product img{
+    max-width: 100%;
+
+}
+
+section.best-sellers .product-slider .product img:hover{
+
+    cursor: zoom-in;
+    
+}
+
+
+section.best-sellers .product-slider .product.new::before{
+ 
+    content: "New";
+    position:absolute;
+    background-color: #EC1C1C;
+   border-radius: 40px;
+   top: 12px;
+   right: 12px;
+   padding: 4px 15px;
+  
+   letter-spacing: 0.35px;
+   font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+
+
+
+
+
+section.best-sellers .product-slider  .product .product-info{
+    margin-top: 50px;
+}
+
+
+
+section.best-sellers .product-slider .product .product-info .product-category {
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 0.35px;
+    line-height: 30px;
+    color: #3E50E5;
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+
+section.best-sellers .product-slider  .product .product-info .product-title {
+    font-weight: normal;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    line-height: 26px;
+     margin-top: 0px;
+     margin-bottom: 6px;
+}
+
+section.best-sellers .product-slider .product .product-info .product-price {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 30px;
+    letter-spacing: 0.7px;
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+
+section.best-sellers .product-slider .product .product-info button {
+    height: 50px;
+    width: 219.5px; 
+    border: 1px solid #000000;
+    border-radius: 220px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+background-color: #ffffff;
+ 
+}
+
+section.best-sellers .product-slider .product:hover{
+    cursor: pointer;
+}
+
+section.best-sellers .product-slider .product:hover .product-info button{
+    background-color: #3E50E5;
+    border: 1px solid #3E50E5 ;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+
+
+
+
+
+section.best-sellers .product-slider .product .product-info .product-price .discounted-price{
+color:  #EC1C1C;
+
+}
+
+section.best-sellers .product-slider .product .product-info .product-price .original-price{
+    letter-spacing: 0.4px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    color: #9B9B9B;
+    text-decoration: line-through;
+}
+
+
+section.newsletter{
+    background-color: rgba(200,200,200,0.18);
+    max-width: 955px;   
+    text-align: center;
+    padding: 72px 0;
+    margin: 80px auto;
+    }
+
+
+section.newsletter h3{
+    font-weight: normal;
+    letter-spacing: 0.6px;
+    font-size: 24px;
+    line-height: 42px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}    
+
+section.newsletter p{
+    font-weight: normal;
+    letter-spacing: 0.4px;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}    
+
+section.newsletter form {
+    display: flex; /*faz com que o botao e a linha do formulario fiquem juntos em um so, pois antes era inline
+                   e isso fazia com que eles ficassem separados */
+    justify-content: center;
+
+}    
+
+section.newsletter form input {
+    height: 50px;
+    width: 326px;
+    max-width: 80%;
+    box-sizing: border-box; /* propriedade interessante, ela permite q objetos com propriedades
+                               de altura e largura iguais mas q nao acabam ficando no mesmo tamanho
+                                devido a diferença de propriedade, como o input q ja vem com paddings
+                                 naturalmente, oq impede q ele fique com o mesmo tamanho do botao mesmo
+                                  com as mesmas definiçoes. para resolver isso, usa-se o box sizing
+                                  border box, que inclui bordas e paddings ate o tamanho total
+                                   de altura e largura definido, sem ultrapassar.
+                                   https://www.w3schools.com/css/css3_box-sizing.asp */
+   border-radius: 60px 0 0 60px;  
+   border: 1px solid #3E3E3E;
+   font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    padding-left: 22px;
+    letter-spacing: 0.35px;
+    color: #3E3E3E;         
+    border-right: none;                 
+}   
+
+section.newsletter form button {
+    height: 50px;
+    width: 326px;
+    max-width: 20%;
+    box-sizing: border-box;
+    background: #3E50E5;
+    border-radius: 0px 60px 60px 0px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px; 
+    letter-spacing: 0.35px; 
+    color: #DDD;
+    text-transform: uppercase;
+    border:  1px solid #3E50E5 ;
+   
+}   
+
+section.newsletter form button:hover{
+    background-color: #FFFFFF;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;  
+    color: #3E50E5;
+    cursor: pointer;
+    border: 1px solid #3E3E3E;
+
+
+}
+
+
+
+
+
+footer .bottom-nav{
+    padding: 60px 0;
+    background-color: #3E3E3E;
+
+
+}
+
+footer .bottom-nav .container{
+    max-width: 955px;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+
+
+footer .bottom-nav ul .list-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    margin-bottom: 20px; 
+    margin-top: 0;
+    
+}
+
+
+footer .bottom-nav ul {
+ list-style-type: none;
+}
+
+footer .bottom-nav ul li a{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #E0E0E0;
+    text-decoration: none;
+    letter-spacing: 0.4px;
+    margin-top: 0;  
+    margin-bottom: 10px;
+    display: block; /* pois como o link eh por padrao um elemento inline, a margem debaixo nao funciona
+                       entao para corrigir e permitir a margem para dar o espaçamento do prototipo
+                        deve-se usar o display block para nao ficar mais inline.   */
+}
+
+
+footer .bottom-nav ul li a:hover{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #3E50E5;
+    cursor: pointer;
+
+}
+
+
+
+footer .copyright-text{
+    color: white;
+    background-color: #2B2B2B;
+    height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.4px;
+}
