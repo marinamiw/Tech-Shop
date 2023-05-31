@@ -15,7 +15,7 @@ estudei sobre flexbox, hover, posicionamentos absolutos e fixos e etc.
                                   Header fixo! 
  
  
-![image](https://github.com/marinamiw/Tech-Shop/assets/111240861/3ecd3332-ff40-4e03-a182-8ed523eb9e28)
+![image](https://github.com/marinamiw/Tech-Shop/assets/111240861/ea182d48-a95b-4f28-b3e4-9cbd1bb925ae)
 
 
                             
